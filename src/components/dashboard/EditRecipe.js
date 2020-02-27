@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Col, Row } from 'reactstrap'
-import { Jumbotron, Button } from 'reactstrap';
+import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader} from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Link } from "react-router-dom";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -21,27 +21,20 @@ return (
         <img width="100%" src={Hands} alt="Card image cap" />  
       </Col>
       <Col sm="8">
+        <Card>
+          <CardHeader tag="h3">Recipe Name</CardHeader>
+          <CardBody>
+            <CardTitle>Requested Hack</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+            <CardTitle>Ingredients</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+            <CardTitle>Preperation Instructions</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+            <CardTitle>Cooking Instructions</CardTitle>
+            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+          </CardBody>
+        </Card>
         <Form>
-          <FormGroup>
-            <Label for="recipeName">Recipe Name</Label>
-            <Input type="title" name="name" id="recipeName"/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="ingredients">Ingredients</Label>
-            <Input type="textarea" name="ingredients" id="ingredients" />
-          </FormGroup>
-          <FormGroup>
-            <Label for="preperation">Preperation Instructions</Label>
-            <Input type="textarea" name="preperation" id="preperation" />
-          </FormGroup>
-          <FormGroup>
-            <Label for="cookingInstructions">Cooking Instructions</Label>
-            <Input type="textarea" name="cookingInstructions" id="cookingInstructions" />
-          </FormGroup>
-          <FormGroup>
-            <Label for="hackNeeded">Hack Needed</Label>
-            <Input type="textarea" name="hackNeeded" id="hackNeeded" />
-          </FormGroup>
           <FormGroup>
             <Label for="hack">Hack</Label>
           <Input type="textarea" name="hack" id="hack" />
@@ -49,7 +42,7 @@ return (
           <Link to="/recipes"> 
               <Button><h4>Submit</h4></Button>
           </Link>
-          <Link to="/">
+          <Link to="/recipes">
             <Button><h4>Cancel</h4></Button>
           </Link>
         </Form>
