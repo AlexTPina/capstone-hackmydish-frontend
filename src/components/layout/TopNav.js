@@ -5,7 +5,7 @@ import { Navbar } from "reactstrap";
 
 const TopNav = props => {
   return (
-    <Navbar bg="primary" variant="dark">
+    <Navbar inverse color="primary">
       <h3>Hack My Dish</h3>
     </Navbar> 
   );
