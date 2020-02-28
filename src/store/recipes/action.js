@@ -73,3 +73,22 @@ export const removeRecipe = id => async dispatch => {
     })
   }
 }
+
+export const updateRecipe = (updateRecipe, id) => async dispatch => {
+  dispatch({
+    type: types.UPDATE_RECIPE_PENDING
+  });
+
+  try {
+    let response = await axios.patch(BASE_URL + `/${id}`, updateRecipe)
+    dispatch({
+      type: types.UPDATE_RECIPE_SUCCESS,
+      payload: response.data
+    });
+  } catch (err) {
+    dispatch({
+      type: types.UPDATE_RECIPE_FAILED,
+      payload: err
+    });
+  }
+};

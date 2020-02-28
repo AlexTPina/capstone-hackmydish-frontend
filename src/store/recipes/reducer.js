@@ -10,11 +10,13 @@ export default (state = initialState, action) => {
     case types.FETCH_ALL_RECIPES_PENDING:
     case types.ADD_RECIPE_PENDING:
     case types.REMOVE_RECIPE_PENDING:
+    case types.UPDATE_RECIPE_PENDING:
       return state
 
     case types.FETCH_ALL_RECIPES_FAILED:
     case types.ADD_RECIPE_FAILED:
     case types.REMOVE_RECIPE_FAILED:
+    case types.UPDATE_RECIPE_FAILED:
       return {
         ...state,
         err: action.payload,
@@ -37,7 +39,16 @@ export default (state = initialState, action) => {
         ...state,
         all: state.all.filter(recipe => recipe.id === action.payload.id),
       }
-
+    
+    case types.UPDATE_RECIPE_SUCCESS:
+      return {
+        ...state,
+        all: [
+          ...state.all.filter(recipe => recipe.id !== action.payload.id),
+          action.payload
+        ]
+      };
+    
     default:
       return state
   }
