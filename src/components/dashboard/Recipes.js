@@ -36,9 +36,7 @@ return (
             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
             <CardTitle>Cooking Instructions</CardTitle>
             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-            <Link to="/editrecipe">
-              <Button>Hack This Dish</Button>
-            </Link>
+            <Button>Hack This Dish</Button>
           </CardBody>
         </Card>
       </Col>

@@ -31,8 +31,8 @@ return (
               <Input type="textarea" name="ingredients" id="ingredients" />
             </FormGroup>
             <FormGroup>
-              <Label for="preperation">Preperation Instructions</Label>
-              <Input type="textarea" name="preperation" id="preperation" />
+              <Label for="preparation">Preparation Instructions</Label>
+              <Input type="textarea" name="preparation" id="preparation" />
             </FormGroup>
             <FormGroup>
               <Label for="cookingInstructions">Cooking Instructions</Label>

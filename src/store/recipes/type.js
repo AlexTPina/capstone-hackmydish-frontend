@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
 
 export default {
-  status: PropTypes.shape({
+  recipe: PropTypes.shape({
     id: PropTypes.number,
-    dish_name: PropTypes.string,
-    hack_request: PropTypes.string,
+    recipe_name: PropTypes.string,
     ingredients: PropTypes.string,
-    directions: PropTypes.string,
+    preparation: PropTypes.string,
+    cooking_instructions: PropTypes.string,
+    hack_needed: PropTypes.string,
+    hack: PropTypes.string,
   }),
 }

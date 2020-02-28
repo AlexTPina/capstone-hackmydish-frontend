@@ -14,4 +14,4 @@ export const REMOVE_RECIPE_PENDING = 'REMOVE_RECIPE_PENDING'
 export const REMOVE_RECIPE_SUCCESS = 'REMOVE_RECIPE_SUCCESS'
 export const REMOVE_RECIPE_FAILED = 'REMOVE_RECIPE_FAILED'
 
-//export const BASE_URL = `http://localhost:8082/api/sosh/comments`
+//export const BASE_URL = `http://localhost:5432/recipes-api`
