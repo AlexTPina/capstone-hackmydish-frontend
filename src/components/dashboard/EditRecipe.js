@@ -3,7 +3,6 @@ import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader} from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Hands from '../layout/Hands.png'
 
@@ -39,10 +38,10 @@ return (
             <Label for="hack">Hack</Label>
           <Input type="textarea" name="hack" id="hack" />
           </FormGroup>
-          <Link to="/recipes"> 
+          <Link to="/recipelist"> 
               <Button><h4>Submit</h4></Button>
           </Link>
-          <Link to="/recipes">
+          <Link to="/recipelist">
             <Button><h4>Cancel</h4></Button>
           </Link>
         </Form>

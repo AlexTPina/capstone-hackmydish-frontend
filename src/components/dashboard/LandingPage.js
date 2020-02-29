@@ -23,7 +23,7 @@ const LandingPage = (props) => {
             <img width="100%" src={Ingredients} alt="Card image cap" />     
           <CardText className="text-muted">To submit a recipe to be hacked by the community simply click the "Submit Recipe" link below. From there simply fill out the form with your recipe detail and the help you are requesting.</CardText>
             <Card body className="text-center">
-            <Link to="/AddRecipe">    
+            <Link to="/addRecipe">    
                 <Button><h3>Submit A Dish!</h3></Button>
             </Link>
           </Card>
@@ -35,7 +35,7 @@ const LandingPage = (props) => {
             <img width="100%" src={TwoCooks} alt="Card image cap" />     
           <CardText className="text-muted">If you are a natural born problem solver feel free to help your neighbors. You can help them by reviewing their requests in the link below and submiting your favorite hacks.</CardText>
           <Card body className="text-center">
-            <Link to="/Recipes">
+            <Link to="/recipelist">
               <Button ><h3>Hack A Dish!</h3></Button>
             </Link>
           </Card>

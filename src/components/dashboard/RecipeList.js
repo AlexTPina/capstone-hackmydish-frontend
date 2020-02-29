@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader } from 'reactstrap';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import TopNav from '../layout/TopNav'
+//import { removeRecipe } from "../../store/recipes/actions";
+import { useDispatch } from "react-redux";
+//import { updateRecipe } from "../../store/recipes/actions";
+import { Link } from "react-router-dom";
+import { setTimeout } from "timers";
+
 import LunchTable from '../layout/LunchTable.png'
 
-const Recipes = () => {
+const RecipeList = () => {
     
 return (
   <Jumbotron>
@@ -36,7 +38,9 @@ return (
             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
             <CardTitle>Cooking Instructions</CardTitle>
             <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-            <Button>Hack This Dish</Button>
+            <Link to="/editrecipe">
+              <Button>Hack This Dish</Button>
+            </Link>
           </CardBody>
         </Card>
       </Col>
@@ -44,7 +48,7 @@ return (
         <img width="100%" src={LunchTable} alt="Card image cap" />  
       </Col>
     </Row>
-    <Row>
+    {/* <Row>
       <Col sm="4">
         <img width="100%" src={LunchTable} alt="Card image cap" />  
       </Col>
@@ -66,9 +70,9 @@ return (
           </CardBody>
         </Card>
       </Col>
-    </Row>
+    </Row> */}
   </Jumbotron>
   )
 }
 
-export default Recipes
+export default RecipeList

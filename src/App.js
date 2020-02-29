@@ -4,7 +4,8 @@ import { Container, Row, Col } from 'reactstrap'
 import LandingPage from './components/dashboard/LandingPage'
 import AddRecipe from './components/dashboard/AddRecipe'
 import EditRecipe from './components/dashboard/EditRecipe'
-import Recipes from './components/dashboard/Recipes'
+import RecipeList from './components/dashboard/RecipeList'
+import Recipe from './components/dashboard/Recipe'
 
 import { connect } from 'react-redux'
 //import { fetchAllCars } from './store/cars/actions'
@@ -25,7 +26,8 @@ class App extends Component {
                   <Route exact path="/" component={LandingPage} />
                   <Route path="/addrecipe" component={AddRecipe} />
                   <Route path="/editrecipe" component={EditRecipe} />
-                  <Route path="/recipes" component={Recipes} />
+                  <Route path="/recipelist" component={RecipeList} />
+                  <Route path="/recipe" component={Recipe} />
                 </Switch>
             </Row>
           </Container>

@@ -42,7 +42,7 @@ return (
               <Label for="hackNeeded">Hack Needed</Label>
               <Input type="textarea" name="hackNeeded" id="hackNeeded" />
             </FormGroup>
-            <Link to="/recipes">
+            <Link to="/recipelist">
               <Button><h4>Submit</h4></Button>
             </Link>
             <Link to="/">
