@@ -1,9 +1,8 @@
 import React from 'react'
 import { Col, Row } from 'reactstrap'
-import { Jumbotron, Button, Card, CardTitle, CardText, CardBody } from 'reactstrap';
+import { Jumbotron, Button, Card, CardText } from 'reactstrap';
 import { Link } from "react-router-dom";
 
-import RecipeCard from '../layout/RecipeCard.png'
 import Ingredients from '../layout/Ingredients.png'
 import TwoCooks from '../layout/TwoCooks.png'
 

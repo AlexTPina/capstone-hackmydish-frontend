@@ -3,7 +3,6 @@ import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Food from '../layout/Food.png'
 
