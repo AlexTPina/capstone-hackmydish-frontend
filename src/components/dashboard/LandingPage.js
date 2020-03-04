@@ -18,8 +18,7 @@ const LandingPage = (props) => {
         <Row>
       <Col sm="6">
         <Card body>
-            {/* <img width="100%" src={RecipeCard} alt="Card image recipe card" />  */}
-            <img width="100%" src={Ingredients} alt="Card image cap" />     
+            <img width="100%" src={Ingredients} alt=" " />     
           <CardText className="text-muted">To submit a recipe to be hacked by the community simply click the "Submit Recipe" link below. From there simply fill out the form with your recipe detail and the help you are requesting.</CardText>
             <Card body className="text-center">
             <Link to="/addRecipe">    
@@ -30,8 +29,7 @@ const LandingPage = (props) => {
       </Col>
       <Col sm="6">
         <Card body>
-            {/* <img width="100%" src={Ingredients} alt="Card image cap" />  */}
-            <img width="100%" src={TwoCooks} alt="Card image cap" />     
+            <img width="100%" src={TwoCooks} alt=" " />     
           <CardText className="text-muted">If you are a natural born problem solver feel free to help your neighbors. You can help them by reviewing their requests in the link below and submiting your favorite hacks.</CardText>
           <Card body className="text-center">
             <Link to="/recipelist">

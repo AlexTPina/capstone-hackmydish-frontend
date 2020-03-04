@@ -18,4 +18,4 @@ export const UPDATE_RECIPE_PENDING = 'UPDATE_RECIPE_PENDING'
 export const UPDATE_RECIPE_SUCCESS = 'UPDATE_RECIPE_SUCCESS'
 export const UPDATE_RECIPE_FAILED = 'UPDATE_RECIPE_FAILED'
 
-export const BASE_URL = `http://localhost:5432/recipes-api`
+export const BASE_URL = `http://localhost:8080/recipes`

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Container, Row } from 'reactstrap'
 
 import LandingPage from './components/dashboard/LandingPage'
 import AddRecipe from './components/dashboard/AddRecipe'
@@ -8,12 +8,12 @@ import RecipeList from './components/dashboard/RecipeList'
 import Recipe from './components/dashboard/Recipe'
 
 import { connect } from 'react-redux'
-//import { fetchAllCars } from './store/cars/actions'
+import { fetchAllRecipes } from './store/recipes/actions'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 class App extends Component {
   componentDidMount() {
-    //this.props.dispatch(fetchAllCars())
+    this.props.dispatch(fetchAllRecipes())
   }
 
   render() {

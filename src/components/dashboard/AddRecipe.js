@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button } from 'reactstrap';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
 
 import Food from '../layout/Food.png'
@@ -17,7 +17,7 @@ return (
         
       <Row>
         <Col sm="4">
-          <img width="100%" src={Food} alt="Card image cap" />  
+          <img width="100%" src={Food} alt=" " />  
         </Col>
         <Col sm="8">
           <Form>
