@@ -4,6 +4,7 @@ import { Container, Row } from 'reactstrap'
 import LandingPage from './components/dashboard/LandingPage'
 import AddRecipe from './components/dashboard/AddRecipe'
 import EditRecipe from './components/dashboard/EditRecipe'
+import HackRecipe from './components/dashboard/HackRecipe'
 import RecipeList from './components/dashboard/RecipeList'
 import Recipe from './components/dashboard/Recipe'
 
@@ -26,6 +27,7 @@ class App extends Component {
                   <Route exact path="/" component={LandingPage} />
                   <Route path="/addrecipe" component={AddRecipe} />
                   <Route path="/editrecipe" component={EditRecipe} />
+                  <Route path="/hackrecipe" component={HackRecipe} />
                   <Route path="/recipelist" component={RecipeList} />
                   <Route path="/recipe" component={Recipe} />
                 </Switch>

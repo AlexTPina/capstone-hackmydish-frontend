@@ -28,10 +28,8 @@ const RecipeList = () => {
           <h1> </h1>
         </Row>
         <Row>
-          
-            {listOfRecipes}
-        
-          </Row>
+          {listOfRecipes}
+        </Row>
       </Jumbotron> 
     )
   } else {

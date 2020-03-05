@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 import Hands from '../layout/Hands.png'
 
-const EditRecipe = () => {
+const HackRecipe = () => {
   
 return (
   <div>
   <Jumbotron>
     <h1 className="display-3">Hack My Dish</h1>
-    <p className="lead">Edit This Dish</p>
+    <p className="lead">Hack This Dish</p>
     <hr className="my-2" />
       
     <Row>
@@ -36,17 +36,14 @@ return (
         <Form>
           <FormGroup>
             <Label for="hack">Hack</Label>
-            <Input type="textarea" name="hack" id="hack" />
+          <Input type="textarea" name="hack" id="hack" />
           </FormGroup>
           <Link to="/recipelist"> 
-              <Button><h4>Submit Edit</h4></Button>
+              <Button><h4>Submit</h4></Button>
           </Link>
           <Link to="/recipelist">
-                <Button><h4>Cancel</h4></Button>
-            </Link>
-            <Link to="/recipelist">
-                <Button><h4>Delete Recipe</h4></Button>
-            </Link>            
+            <Button><h4>Cancel</h4></Button>
+          </Link>
         </Form>
       </Col>
     </Row>
@@ -55,4 +52,4 @@ return (
   )
 }
 
-export default EditRecipe
+export default HackRecipe

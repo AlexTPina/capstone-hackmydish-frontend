@@ -34,9 +34,12 @@ return (
                         <CardText>{preparation}</CardText>
                     <CardTitle>Cooking Instructions</CardTitle>
                         <CardText>{cookingInstructions}</CardText>
-                    <Link to="/editrecipe">
+                    <Link to="/hackrecipe">
                         <Button>Hack This Dish</Button>
                     </Link>
+                    <Link to="/editrecipe">
+                        <Button>Edit This Dish</Button>
+                    </Link>    
                 </CardBody>
                 </Card>
             </Col>
