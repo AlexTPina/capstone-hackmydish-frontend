@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container, Row } from 'reactstrap'
 
 import LandingPage from './components/dashboard/LandingPage'
-import AddRecipe from './components/dashboard/AddRecipe'
+import RecipeAdd from './components/dashboard/RecipeAdd'
 import EditRecipe from './components/dashboard/EditRecipe'
 import HackRecipe from './components/dashboard/HackRecipe'
 import RecipeList from './components/dashboard/RecipeList'
@@ -25,8 +25,8 @@ class App extends Component {
             <Row>
                 <Switch>
                   <Route exact path="/" component={LandingPage} />
-                  <Route path="/addrecipe" component={AddRecipe} />
-                  <Route path="/editrecipe" component={EditRecipe} />
+                  <Route path="/recipeAdd" component={RecipeAdd} />
+                  <Route path="/editrecipe/:id" component={EditRecipe} />
                   <Route path="/hackrecipe" component={HackRecipe} />
                   <Route path="/recipelist" component={RecipeList} />
                   <Route path="/recipe" component={Recipe} />

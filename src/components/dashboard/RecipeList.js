@@ -11,7 +11,11 @@ const RecipeList = () => {
   const recipes = useSelector(state => state.recipes.all);
   let listOfRecipes;
   
-  listOfRecipes = recipes.map(recipe => <Recipe key={recipe.id} recipe={recipe} />);
+  listOfRecipes = recipes.map(recipe => {
+    console.log("recipe: ", recipe)
+    return (<Recipe key={recipe.id} recipe={recipe} />)
+    
+  });
   
   if (recipes && recipes.length) {
     return (

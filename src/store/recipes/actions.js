@@ -38,7 +38,7 @@ export const fetchOneRecipe = id => async dispatch => {
   }
 }
 
-export const addRecipe = newRecipe => async dispatch => {
+export const addRecipe = (newRecipe, changeRoute) => async dispatch => {
   dispatch({
     type: types.ADD_RECIPE_PENDING,
   })
@@ -48,6 +48,7 @@ export const addRecipe = newRecipe => async dispatch => {
       type: types.ADD_RECIPE_SUCCESS,
       payload: response.data,
     })
+    changeRoute("/recipelist")
   } catch (err) {
     dispatch({
       type: types.ADD_RECIPE_FAILED,

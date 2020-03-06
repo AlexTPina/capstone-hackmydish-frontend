@@ -21,7 +21,7 @@ const LandingPage = (props) => {
             <img width="100%" src={Ingredients} alt=" " />     
           <CardText className="text-muted">To submit a recipe to be hacked by the community simply click the "Submit Recipe" link below. From there simply fill out the form with your recipe detail and the help you are requesting.</CardText>
             <Card body className="text-center">
-            <Link to="/addRecipe">    
+            <Link to="/recipeAdd">    
                 <Button><h3>Submit A Dish!</h3></Button>
             </Link>
           </Card>
