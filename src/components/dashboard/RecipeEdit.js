@@ -1,22 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from "react-redux";
 import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader} from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { removeRecipe } from "../../store/recipes/actions";
+import { updateRecipe } from "../../store/recipes/actions";
+import { setTimeout } from "timers";
 import Recipe from "./Recipe";
 import Hands from '../layout/Hands.png'
 
-const EditRecipe = () => {
-    const recipe = useSelector(state => state.recipes.one) || { }
-    console.log("recipe: ", recipe)
-    const { cookingInstructions } =recipe
+const RecipeEdit = () => {
+    const params = useParams()
+    const recipes = useSelector(state => state.recipes.all)
+    const recipe = recipes.filter(recipe => recipe.id === Number(params.id))
+   
+    const { recipeName, hackNeeded, ingredients, preparation, cookingInstructions, hack } = recipe[0]
     const [state, setState] = useState({
-        
-        cookingInstructions: recipe.hasOwnProperty("id") ? cookingInstructions : " ",
-        
-      })
-      console.log('state: ', state)
+        recipeName: recipeName,
+        hackNeeded: hackNeeded,
+        ingredients: ingredients,
+        preparation: preparation,
+        cookingInstructions: cookingInstructions,
+        hack: hack
+    })
+    
+    
+    const removeRecipeButton = (e) => {
+        dispatchEvent(removeRecipe(e.target.id));
+        setTimeout(window.location.reload(), 1000)
+    };    
+
+
 return (
   <div>
   <Jumbotron>
@@ -32,19 +47,19 @@ return (
         <Form>
             <FormGroup>
                 <Label for="recipeName">Recipe Name</Label>
-                            <Input type="textArea" name="recipeName" id="recipeName" defaultValue={recipe.recipeName}/>
+                            <Input type="textArea" name="recipeName" id="recipeName" defaultValue={state.recipeName}/>
             </FormGroup>
             <FormGroup>
                 <Label for="hackNeeded">Requested Hack</Label>
-                    <Input type="textArea" name="hackNeeded" id="hackNeeded" defaultValue={recipe.hackNeeded}/>
+                    <Input type="textArea" name="hackNeeded" id="hackNeeded" defaultValue={state.hackNeeded}/>
             </FormGroup>                 
             <FormGroup>
                 <Label for="ingredients">Ingredients</Label>
-                    <Input type="textArea" name="ingredients" id="ingredients" defaultValue={recipe.ingredients}/>
+                    <Input type="textArea" name="ingredients" id="ingredients" defaultValue={state.ingredients}/>
             </FormGroup>                 
             <FormGroup>
                 <Label for="preparationInstructions">Preparation Instructions</Label>
-                    <Input type="textArea" name="preparationInstructions" id="preparationInstructions" defaultValue={recipe.preparation}/>
+                    <Input type="textArea" name="preparationInstructions" id="preparationInstructions" defaultValue={state.preparation}/>
             </FormGroup>  
             <FormGroup>
                 <Label for="cookingInstructions">Cooking Instructions</Label>
@@ -61,7 +76,7 @@ return (
                 <Button><h4>Cancel</h4></Button>
             </Link>
             <Link to="/recipelist">
-                <Button><h4>Delete Recipe</h4></Button>
+                <Button id={recipe.id} onClick={removeRecipeButton}><h4>Delete Recipe</h4></Button>
             </Link>            
         </Form>
       </Col>
@@ -71,4 +86,6 @@ return (
   )
 }
 
-export default EditRecipe
+export default RecipeEdit
+
+//console.log("recipe: ", recipe)

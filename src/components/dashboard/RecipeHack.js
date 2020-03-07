@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import Hands from '../layout/Hands.png'
 
-const HackRecipe = () => {
+const RecipeHack = () => {
   
 return (
   <div>
@@ -52,4 +52,4 @@ return (
   )
 }
 
-export default HackRecipe
+export default RecipeHack
