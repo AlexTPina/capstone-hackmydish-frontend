@@ -65,7 +65,7 @@ export const removeRecipe = id => async dispatch => {
     let response = await axios.delete(BASE_URL + `/${id}`)
     dispatch({
       type: types.REMOVE_RECIPE_SUCCESS,
-      payload: response.data,
+      payload: id,
     })
   } catch (err) {
     dispatch({
@@ -75,17 +75,17 @@ export const removeRecipe = id => async dispatch => {
   }
 }
 
-export const updateRecipe = (updateRecipe, id) => async dispatch => {
+export const updateRecipe = (updateRecipe, changeRoute, id) => async dispatch => {
   dispatch({
     type: types.UPDATE_RECIPE_PENDING
   });
-
   try {
-    let response = await axios.patch(BASE_URL + `/${id}`, updateRecipe)
+    let response = await axios.patch(BASE_URL, updateRecipe)
     dispatch({
       type: types.UPDATE_RECIPE_SUCCESS,
       payload: response.data
-    });
+    })
+    changeRoute("/recipelist")
   } catch (err) {
     dispatch({
       type: types.UPDATE_RECIPE_FAILED,
@@ -93,3 +93,6 @@ export const updateRecipe = (updateRecipe, id) => async dispatch => {
     });
   }
 };
+
+
+// `+ `/${id}

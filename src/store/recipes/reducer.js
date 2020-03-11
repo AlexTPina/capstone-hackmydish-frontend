@@ -46,7 +46,7 @@ export default (state = initialState, action) => {
     case types.REMOVE_RECIPE_SUCCESS:
       return {
         ...state,
-        all: state.all.filter(recipe => recipe.id === action.payload.id),
+        all: state.all.filter(recipe => recipe.id !== Number(action.payload)),
       }
     
     case types.UPDATE_RECIPE_SUCCESS:

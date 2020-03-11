@@ -1,12 +1,41 @@
 import React, { useState } from 'react'
+import { useSelector } from "react-redux";
 import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader} from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import { Link } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { updateRecipe } from '../../store/recipes/actions';
+import Recipe from "./Recipe";
 import Hands from '../layout/Hands.png'
 
-const RecipeHack = () => {
+const RecipeHack = (props) => {
+  const dispatch = useDispatch()
+  const params = useParams()
+  const recipes = useSelector(state => state.recipes.all)
+  const recipe = recipes.filter(recipe => recipe.id === Number(params.id))
+  
+  const { id, recipeName, hackNeeded, ingredients, preparation, cookingInstructions, hack } = recipe[0]
+  const [state, setState] = useState({
+    id: id,
+    recipeName: recipeName,
+    hackNeeded: hackNeeded,
+    ingredients: ingredients,
+    preparation: preparation,
+    cookingInstructions: cookingInstructions,
+    hack: hack
+  })
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(updateRecipe(state, props.history.push, state.id ))
+}
+  const handleChange = name => e => {
+    setState({
+      ...state,
+      [name]: e.target.value
+    })
+  }
   
 return (
   <div>
@@ -21,26 +50,25 @@ return (
       </Col>
       <Col sm="8">
         <Card>
-          <CardHeader tag="h3">Recipe Name</CardHeader>
+            <CardHeader tag="h3">{state.recipeName}</CardHeader>
           <CardBody>
             <CardTitle>Requested Hack</CardTitle>
-            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+              <CardText>{state.hackNeeded}</CardText>
             <CardTitle>Ingredients</CardTitle>
-            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+              <CardText>{state.ingredients}</CardText>
             <CardTitle>Preperation Instructions</CardTitle>
-            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+              <CardText>{state.preparation}</CardText>
             <CardTitle>Cooking Instructions</CardTitle>
-            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+              <CardText>{state.cookingInstructions}</CardText>
           </CardBody>
         </Card>
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <FormGroup>
             <Label for="hack">Hack</Label>
-          <Input type="textarea" name="hack" id="hack" />
+              <Input type="textarea" name="hack" id="hack"
+              value={state.hack} onChange={handleChange("hack")}/>
           </FormGroup>
-          <Link to="/recipelist"> 
-              <Button><h4>Submit</h4></Button>
-          </Link>
+            <Button type="submit"><h4>Submit</h4></Button>
           <Link to="/recipelist">
             <Button><h4>Cancel</h4></Button>
           </Link>

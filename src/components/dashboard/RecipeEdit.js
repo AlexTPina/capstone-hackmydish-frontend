@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Col, Row } from 'reactstrap'
 import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader} from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
@@ -10,11 +10,12 @@ import { setTimeout } from "timers";
 import Recipe from "./Recipe";
 import Hands from '../layout/Hands.png'
 
-const RecipeEdit = () => {
+const RecipeEdit = (props) => {
     const params = useParams()
     const recipes = useSelector(state => state.recipes.all)
     const recipe = recipes.filter(recipe => recipe.id === Number(params.id))
-   
+    const dispatch = useDispatch();
+
     const { recipeName, hackNeeded, ingredients, preparation, cookingInstructions, hack } = recipe[0]
     const [state, setState] = useState({
         recipeName: recipeName,
@@ -26,9 +27,10 @@ const RecipeEdit = () => {
     })
     
     
-    const removeRecipeButton = (e) => {
-        dispatchEvent(removeRecipe(e.target.id));
-        setTimeout(window.location.reload(), 1000)
+  const removeRecipeButton = e => {
+        console.log("remove id: ", props.match.params.id)
+        dispatch(removeRecipe(props.match.params.id));
+        //setTimeout(window.location.reload(), 1000)
     };    
 
 

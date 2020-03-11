@@ -13,7 +13,6 @@ const Recipe = ({ recipe }) => {
     const{ recipeName, ingredients, preparation, cookingInstructions, hackNeeded, hack, id} = recipe
 
     const dispatch = useDispatch();
-    console.log("hi")
 
     const handleClick = recipeId => {
         dispatch(fetchOneRecipe(recipeId))

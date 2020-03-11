@@ -24,7 +24,7 @@ const RecipeAdd = (props) => {
       ...state, 
       hack:""
     }
-    console.log("state: ", formatedRecipe)
+   
     dispatch(addRecipe(formatedRecipe, props.history.push))
 }
   const handleChange = name => e => {
@@ -49,7 +49,7 @@ return (
           <Form onSubmit={handleSubmit}>
             <FormGroup>
               <Label for="recipeName">Recipe Name</Label>
-              <Input type="title" name="name" id="recipeName"
+              <Input type="title" name="recipeName" id="recipeName"
                 value={state.recipeName} onChange={handleChange("recipeName")}/>
             </FormGroup>
             <FormGroup>

@@ -12,7 +12,7 @@ const RecipeList = () => {
   let listOfRecipes;
   
   listOfRecipes = recipes.map(recipe => {
-    console.log("recipe: ", recipe)
+    // console.log("recipe: ", recipe)
     return (<Recipe key={recipe.id} recipe={recipe} />)
     
   });
