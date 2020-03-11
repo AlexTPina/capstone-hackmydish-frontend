@@ -33,7 +33,9 @@ return (
                         <CardText>{preparation}</CardText>
                     <CardTitle>Cooking Instructions</CardTitle>
                         <CardText>{cookingInstructions}</CardText>
-                        <Link to={`/recipehack/${id}`}>
+                    <CardTitle>Hack</CardTitle>
+                        <CardText>{hack}</CardText>    
+                    <Link to={`/recipehack/${id}`}>
                         <Button onClick={ ()=> handleClick(id)}>Hack This Dish</Button>
                     </Link>
                     <Link to={`/recipeedit/${id}`}>
