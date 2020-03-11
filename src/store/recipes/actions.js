@@ -62,7 +62,7 @@ export const removeRecipe = id => async dispatch => {
     type: types.REMOVE_RECIPE_PENDING,
   })
   try {
-    let response = await axios.delete(BASE_URL + `/${id}`)
+    await axios.delete(BASE_URL + `/${id}`)
     dispatch({
       type: types.REMOVE_RECIPE_SUCCESS,
       payload: id,
