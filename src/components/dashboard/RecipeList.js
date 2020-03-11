@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Jumbotron, Button, Row, Col } from 'reactstrap';
+import { Jumbotron, Button, Row } from 'reactstrap';
 
 import { Link } from "react-router-dom";
-import LunchTable from '../layout/LunchTable.png'
 
 import Recipe from "./Recipe";
 

@@ -6,7 +6,6 @@ import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link, useParams } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { updateRecipe } from '../../store/recipes/actions';
-import Recipe from "./Recipe";
 import Hands from '../layout/Hands.png'
 
 const RecipeHack = (props) => {

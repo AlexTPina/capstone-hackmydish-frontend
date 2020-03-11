@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { Col, Row } from 'reactstrap'
-import { Jumbotron, Button, Card, CardTitle, CardText, CardBody, CardHeader} from 'reactstrap';
+import { Jumbotron, Button } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link, useParams } from "react-router-dom";
 import { removeRecipe } from "../../store/recipes/actions";
 import { updateRecipe } from "../../store/recipes/actions";
-import { setTimeout } from "timers";
-import Recipe from "./Recipe";
+
 import Hands from '../layout/Hands.png'
 
 const RecipeEdit = (props) => {

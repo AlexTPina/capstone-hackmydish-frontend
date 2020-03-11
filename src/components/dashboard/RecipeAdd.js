@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Col, Row } from 'reactstrap';
 import { Jumbotron, Button } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addRecipe } from '../../store/recipes/actions';
 import Food from '../layout/Food.png';
